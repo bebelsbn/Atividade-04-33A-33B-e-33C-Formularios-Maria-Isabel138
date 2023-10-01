@@ -1,0 +1,29 @@
+
+
+<h1>Adicionar Nova Coisa que quero aprender</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Título:</label>
+    <input name="title" value="{{ learn.title }}">
+  </div>
+  
+  <div>
+    <label>Categoria:</label>
+    <input name="category" value="{{ learn.category }}">
+  </div>
+
+  <div>
+    <label>Prioridade(1-10):</label>
+    <input name="priority" value="{{ learn.priority }}">
+  </div>
+
+    <div>
+    <label>Nivel Atual (0-10):</label>
+    <input name="current_level"  value="{{ learn.current_level }}">
+  </div>
+
+  <input type="submit" value="Registrar">
+</form>
+  </div>

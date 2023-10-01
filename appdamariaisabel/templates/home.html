@@ -1,0 +1,112 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Maria Isabel Soares Brandão Nicolau </title>
+  <link href="{% static 'styles.css' %}" rel="stylesheet" type="text/css" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  
+  <h1>Sobre mim e meus hobbies favoritos</h1>
+  <h2>Venha me conhecer mais um pouco!!</h2>
+  <h3>Maria Isabel Soares Brandão Nicolau</h3>
+  
+
+  <p style="text-align: justify;">
+    <b style="color: black ">Significado de Hobby:</b> <i>Passatempo ou o estrangeirismo </i> original hobby é a denominação dada a uma atividade de <u>entretenimento livre</u> que o indivíduo desenvolve sozinho ou coletivamente. Um passatempo pode manifestar-se de várias formas: atividade prática ou pura e simples atividade intelectual. <span style="color:hotpink;"> Os hobbies podem ser dividos como:</span>
+  </p>
+
+  <div class="center">
+     <div><img src="{% static 'images/hobbiesimagem.jpg'%}" width="300"></div>
+  </div>
+  </div>
+
+  <h3>Meus Hobbies favoritos:</h3>
+   <!--<ol>
+    <li>Viajar</li>
+    <li>Sair com amigos ou família</li>
+    <li>Jogar Vôlei na praia </li>
+    <li>Ver séries</li>
+    <li>Ver jogos do fluminense no maracanã</li>
+    <li>Dançar</li>   
+
+  </ol>-->
+  <ol>
+    {% for hobbies in hobbies %}
+    <li>{{hobbies.title}}
+      <a href="/hobbies/update/{{ hobbie.id }}">Atualizar</a>
+      <a href="/hobbies/delete/{{ hobbie.id }}">Remover</a>
+    </li>
+    {% endfor %}
+  </ol>
+  
+  <a href= "/hobbies">Adicionar Novo : Hobbie</a>
+  
+  <h3>Lugares que quero conhecer até 2025</h3>
+  <table border="1">
+    <tr>
+        <td>País</td>
+        <td>Estação do ano</td>
+        <td>Companhia</td>
+        <td>Lugar turistico que mais quero conhecer</td>
+    </tr>
+    <tr>
+        <td>Espanha</td>
+        <td>Outono</td>
+        <td>Minha irmã</td>
+        <td>Sagrada Familia</td>
+    </tr>
+    <tr>
+        <td>Italia</td>
+        <td>Primavera</td>
+        <td>Com amigas</td>
+        <td>Coliseu</td>
+    </tr>
+</table>
+  <h3>Aplicativos favoritos:</h3>
+    <ol>
+    <li>Instagram</li>
+    <li>Whatsapp</li>
+    <li>Spotify</li>
+    <li>Netflix</li>
+    <li>Tiktok</li>
+  </ol>
+  
+<h3>Coisas que quero aprender</h3>
+  <!--<ul>
+    <li>Programar</li>
+    <li>Cozinhar</li>
+    <li>Francês</li>
+    <li>Inteligência Artificial</li>
+    <li>Jogar tênis </li>
+  </ul>-->
+   <ul>
+    {% for learn in learn %}
+    <li>{{learn.title}} 
+      <a href="/learn/update/{{ learn.id }}">Atualizar</a>
+      <a href="/learn/delete/{{ learn.id }}">Remover</a>
+    </li>
+    {% endfor %}
+  </ul>
+    <a href= "/learn">Adicionar Novas : Coisas que quero prender</a>
+
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">A importância de ter Hobbies</h5>
+    <p class="card-text">Ter um hobby é sinônimo de saúde. O estresse e a ansiedade são mãos do século.</p>
+    <a href="https://www.youtube.com/watch?v=Iczw9t_k2FE" class="btn btn-primary">Vídeo Sobre</a>
+  </div>
+</div>
+<p> Confira aqui exemplos de hobbies : <a href="https://www.dicionariopopular.com/ideias-incriveis-de-hobby/" target="_blank">Lista com 68 tipos criativos para fazer</a>.</p>
+  
+</body>
+</html>

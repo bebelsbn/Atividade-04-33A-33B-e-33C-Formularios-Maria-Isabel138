@@ -1,0 +1,28 @@
+
+<h1>Adicionar Novo Hobbie</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label for="title">Título:</label>
+    <input name="title" value="{{ hobbie.title }}">
+  </div>
+  
+  <div>
+    <label >Duração da Prática </label>
+    <input name="practice_duration" value="{{ hobbie.practice_duration }}">
+  </div>
+
+  <div>
+    <label >Freqûencia Semanal(1-7 dias):</label>
+    <input name="frequency" value="{{ hobbie.frequency }}">
+  </div>
+
+  <div>
+    <label >Benefícios</label>
+    <input name="benefits" value="{{ hobbie.benefits }}">
+  </div>
+
+  <input type="submit" value="Registrar">
+</form>
+```
